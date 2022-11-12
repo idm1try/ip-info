@@ -5,7 +5,7 @@ import useIpInfo from '../lib/useIpInfo';
 
 const Page = () => {
   const { ipInfo, isLoading } = useIpInfo();
-  const clipboard = useClipboard({ timeout: 500 });
+  const clipboard = useClipboard({ timeout: 800 });
 
   return (
     <div className='animate-fade_in_up'>
@@ -14,12 +14,19 @@ const Page = () => {
         <div>
           {!isLoading && (
             <div>
-              <h1
+              <div
                 className='text-2xl min-[340px]:text-4xl text-center font-bold my-20 hover:text-teal-600 active:text-teal-600/80 dark:active:text-teal-400/80 dark:hover:text-teal-400 transition-colors duration-500 cursor-pointer'
                 onClick={() => clipboard.copy(ipInfo.ip)}
               >
-                {ipInfo.ip}
-              </h1>
+                <div className='relative inline-block'>
+                  {clipboard.copied && (
+                    <div className='text-gray-500 text-sm min-[340px]:text-base absolute bottom-8 min-[340px]:bottom-12'>
+                      Copied!
+                    </div>
+                  )}
+                  {ipInfo.ip}
+                </div>
+              </div>
               <div className='grid gap-5'>
                 {ipInfo.hostname && (
                   <div className='md:flex md:justify-between'>
