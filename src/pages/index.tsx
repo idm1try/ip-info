@@ -5,7 +5,7 @@ import useIpInfo from '../lib/useIpInfo';
 
 const Page = () => {
   const { ipInfo, isLoading } = useIpInfo();
-  const clipboard = useClipboard({ timeout: 800 });
+  const clipboard = useClipboard({ timeout: 1300 });
 
   return (
     <div className='animate-fade_in_up'>
@@ -20,7 +20,7 @@ const Page = () => {
               >
                 <div className='relative inline-block'>
                   {clipboard.copied && (
-                    <div className='text-gray-500 text-sm min-[340px]:text-base absolute bottom-8 min-[340px]:bottom-12'>
+                    <div className='text-gray-500 text-sm min-[340px]:text-base absolute bottom-8 min-[340px]:bottom-12 animate-fade_in_up_down'>
                       Copied!
                     </div>
                   )}
