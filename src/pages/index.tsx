@@ -57,7 +57,7 @@ const Page = () => {
                 {ipInfo.timezone && (
                   <div className='md:flex md:justify-between'>
                     <div className='font-bold'>
-                      <TbClock className='inline-block mb-1' /> Timezone
+                      <TbClock className='inline-block mb-1 mr-1' /> Timezone
                     </div>
                     <div>{ipInfo.timezone}</div>
                   </div>
