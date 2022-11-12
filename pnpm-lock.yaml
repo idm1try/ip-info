@@ -17,6 +17,7 @@ specifiers:
   next: 13.0.3
   postcss: ^8.4.19
   prettier: ^2.7.1
+  prettier-plugin-tailwindcss: ^0.1.13
   react: 18.2.0
   react-dom: 18.2.0
   react-icons: ^4.6.0
@@ -48,6 +49,7 @@ devDependencies:
   husky: 8.0.2
   postcss: 8.4.19
   prettier: 2.7.1
+  prettier-plugin-tailwindcss: 0.1.13_prettier@2.7.1
   tailwindcss: 3.2.3_v776zzvn44o7tpgzieipaairwm
   ts-node: 10.9.1_fxotr6iqnckpi76swcl5uzszdi
   typescript: 4.8.4
@@ -2683,6 +2685,15 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       fast-diff: 1.2.0
+    dev: true
+
+  /prettier-plugin-tailwindcss/0.1.13_prettier@2.7.1:
+    resolution: {integrity: sha512-/EKQURUrxLu66CMUg4+1LwGdxnz8of7IDvrSLqEtDqhLH61SAlNNUSr90UTvZaemujgl3OH/VHg+fyGltrNixw==}
+    engines: {node: '>=12.17.0'}
+    peerDependencies:
+      prettier: '>=2.2.0'
+    dependencies:
+      prettier: 2.7.1
     dev: true
 
   /prettier/2.7.1:

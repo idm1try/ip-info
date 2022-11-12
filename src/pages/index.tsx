@@ -15,12 +15,12 @@ const Page = () => {
           {!isLoading && (
             <div>
               <div
-                className='text-2xl min-[340px]:text-4xl text-center font-bold my-20 hover:text-teal-600 active:text-teal-600/80 dark:active:text-teal-400/80 dark:hover:text-teal-400 transition-colors duration-500 cursor-pointer'
+                className='my-20 cursor-pointer text-center text-2xl font-bold transition-colors duration-500 hover:text-teal-600 active:text-teal-600/80 dark:hover:text-teal-400 dark:active:text-teal-400/80 min-[340px]:text-4xl'
                 onClick={() => clipboard.copy(ipInfo.ip)}
               >
                 <div className='relative inline-block'>
                   {clipboard.copied && (
-                    <div className='text-gray-500 text-sm min-[340px]:text-base absolute bottom-8 min-[340px]:bottom-12 animate-fade_in_up_down'>
+                    <div className='absolute bottom-8 animate-fade_in_up_down text-sm text-gray-500 min-[340px]:bottom-12 min-[340px]:text-base'>
                       Copied!
                     </div>
                   )}
@@ -31,7 +31,7 @@ const Page = () => {
                 {ipInfo.hostname && (
                   <div className='md:flex md:justify-between'>
                     <div className='font-bold'>
-                      <TbDevicesPc className='inline-block mb-1 mr-1' /> Hostname
+                      <TbDevicesPc className='mb-1 mr-1 inline-block' /> Hostname
                     </div>
                     <div>{ipInfo.hostname}</div>
                   </div>
@@ -39,7 +39,7 @@ const Page = () => {
                 {ipInfo.city && (
                   <div className='md:flex md:justify-between'>
                     <div className='font-bold'>
-                      <TbMapPin className='inline-block mb-1 mr-1' /> Location
+                      <TbMapPin className='mb-1 mr-1 inline-block' /> Location
                     </div>
                     <div>
                       {ipInfo.city}, {ipInfo.region}, {ipInfo.country}
@@ -49,7 +49,7 @@ const Page = () => {
                 {ipInfo.org && (
                   <div className='md:flex md:justify-between'>
                     <div className='font-bold'>
-                      <TbCloudComputing className='inline-block mb-1 mr-1' /> ISP
+                      <TbCloudComputing className='mb-1 mr-1 inline-block' /> ISP
                     </div>
                     <div>{ipInfo.org.slice(ipInfo.org.indexOf(' '))}</div>
                   </div>
@@ -57,7 +57,7 @@ const Page = () => {
                 {ipInfo.timezone && (
                   <div className='md:flex md:justify-between'>
                     <div className='font-bold'>
-                      <TbClock className='inline-block mb-1 mr-1' /> Timezone
+                      <TbClock className='mb-1 mr-1 inline-block' /> Timezone
                     </div>
                     <div>{ipInfo.timezone}</div>
                   </div>
