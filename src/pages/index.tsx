@@ -8,14 +8,14 @@ const Page = () => {
   const clipboard = useClipboard({ timeout: 1300 });
 
   return (
-    <div className='animate-fade_in_up'>
+    <div>
       <Search />
       {ipInfo && (
         <div>
           {!isLoading && (
             <div>
               <div
-                className='my-20 cursor-pointer text-center text-2xl font-bold transition-colors duration-500 hover:text-teal-600 active:text-teal-600/80 dark:hover:text-teal-400 dark:active:text-teal-400/80 min-[340px]:text-4xl'
+                className='my-20 animate-fade_in_up cursor-pointer text-center text-2xl font-bold transition-colors duration-500 hover:text-teal-600 active:text-teal-600/80 dark:hover:text-teal-400 dark:active:text-teal-400/80 min-[340px]:text-4xl'
                 onClick={() => clipboard.copy(ipInfo.ip)}
               >
                 <div className='relative inline-block'>
