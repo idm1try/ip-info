@@ -1,11 +1,16 @@
-import { TbClock, TbCloudComputing, TbDevicesPc, TbMapPin } from 'react-icons/tb';
-import Search from '../components/Search';
-import { useClipboard } from '../lib/useClipboard';
-import useIpInfo from '../lib/useIpInfo';
+import {
+  TbClock,
+  TbCloudComputing,
+  TbDevicesPc,
+  TbMapPin,
+} from 'react-icons/tb'
+import Search from '../components/Search'
+import { useClipboard } from '../lib/useClipboard'
+import useIpInfo from '../lib/useIpInfo'
 
 const Page = () => {
-  const { ipInfo, isLoading } = useIpInfo();
-  const clipboard = useClipboard({ timeout: 1300 });
+  const { ipInfo, isLoading } = useIpInfo()
+  const clipboard = useClipboard({ timeout: 1300 })
 
   return (
     <div>
@@ -31,7 +36,8 @@ const Page = () => {
                 {ipInfo.hostname && (
                   <div className='md:flex md:justify-between'>
                     <div className='font-bold'>
-                      <TbDevicesPc className='mb-1 mr-1 inline-block' /> Hostname
+                      <TbDevicesPc className='mb-1 mr-1 inline-block' />{' '}
+                      Hostname
                     </div>
                     <div>{ipInfo.hostname}</div>
                   </div>
@@ -49,7 +55,8 @@ const Page = () => {
                 {ipInfo.org && (
                   <div className='md:flex md:justify-between'>
                     <div className='font-bold'>
-                      <TbCloudComputing className='mb-1 mr-1 inline-block' /> ISP
+                      <TbCloudComputing className='mb-1 mr-1 inline-block' />{' '}
+                      ISP
                     </div>
                     <div>{ipInfo.org.slice(ipInfo.org.indexOf(' '))}</div>
                   </div>
@@ -68,7 +75,7 @@ const Page = () => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page

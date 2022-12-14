@@ -1,7 +1,7 @@
-import useIpInfo from '../lib/useIpInfo';
+import useIpInfo from '../lib/useIpInfo'
 
 const Search = () => {
-  const { setIp } = useIpInfo();
+  const { setIp } = useIpInfo()
 
   return (
     <div>
@@ -11,7 +11,7 @@ const Search = () => {
         onChange={event => setIp(event.target.value)}
       />
     </div>
-  );
-};
+  )
+}
 
-export default Search;
+export default Search
