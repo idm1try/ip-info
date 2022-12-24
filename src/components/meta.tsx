@@ -25,6 +25,7 @@ const Meta = () => (
     <meta name='twitter:site' content='@idm1try' />
     <meta name='twitter:creator' content='@idm1try' />
     <meta name='darkreader-lock' />
+    <link rel='preconnect' href='https://ipinfo.io' />
     <title>IP Info</title>
   </Head>
 )
