@@ -12,7 +12,11 @@ async function fetcher(url: string) {
 
 export default function useIpInfo(): IpInfoResponse {
   const { data: getIp } = useSWR('https://ipinfo.io/ip', ipFetcher)
-  const [ip, setIp] = useState('')
+  const [ip, setIp] = useState<string>('')
+
+  useEffect(() => {
+    setIp(getIp as string)
+  }, [getIp])
 
   useEffect(() => {
     window.addEventListener('input', event =>
@@ -24,7 +28,7 @@ export default function useIpInfo(): IpInfoResponse {
       )
   })
 
-  const { data: ipInfo, error } = useSWR(
+  const { data, error } = useSWR(
     `/api/ipinfo?ip=${ip !== '' ? ip : getIp}`,
     fetcher
   )
@@ -32,7 +36,7 @@ export default function useIpInfo(): IpInfoResponse {
   return {
     ip,
     setIp,
-    ipInfo,
-    isLoading: !ipInfo && !error,
+    ipInfo: data,
+    isLoading: !data && !error,
   }
 }
