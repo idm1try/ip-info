@@ -26,8 +26,14 @@ const Meta = () => (
     <meta property='og:locale' content='en_US' />
     <meta property='og:url' content='https://ip.idm1try.ru/' />
     <link rel='canonical' href='https://ip.idm1try.ru/' />
-    <meta property='og:image' content='https://ip.idm1try.ru/og.png' />
-    <meta name='twitter:image' content='https://ip.idm1try.ru/og.png' />
+    <meta
+      property='og:image'
+      content='https://idm1try.ru/api/og?heading=IP+Info'
+    />
+    <meta
+      name='twitter:image'
+      content='https://idm1try.ru/api/og?heading=IP+Info'
+    />
     <meta name='twitter:card' content='summary_large_image' />
     <meta name='twitter:title' content='IP Info' />
     <meta name='twitter:site' content='@idm1try' />
