@@ -13,7 +13,7 @@ const Search = () => {
           'outline-none transition-colors',
           'duration-300 placeholder:text-neutral-600',
           'dark:placeholder:text-neutral-400',
-          'animate-in dark:bg-neutral-800'
+          'dark:bg-neutral-800'
         )}
         onChange={event => setIp(event.target.value)}
         value={ip}
