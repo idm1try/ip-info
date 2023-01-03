@@ -15,7 +15,7 @@ export default function useIpInfo(): IpInfoResponse {
   const [ip, setIp] = useState<string>('')
 
   useEffect(() => {
-    setIp(getIp as string)
+    setIp(getIp ? (getIp as string) : '')
   }, [getIp])
 
   useEffect(() => {
