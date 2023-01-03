@@ -12,9 +12,11 @@ const Meta = () => (
       content='#fafafa'
       media='(prefers-color-scheme: light)'
     />
+    <meta name='msapplication-TileColor' content='#171717' />
     <meta name='description' content='View info for your ip or search it' />
     <link rel='icon' type='image/png' sizes='96x96' href='/favicon.png' />
     <link rel='apple-touch-icon' sizes='180x180' href='apple-touch-icon.png' />
+    <link href='/site.webmanifest' rel='manifest' />
     <meta name='robots' content='follow, index' />
     <meta property='og:type' content='website' />
     <meta property='og:title' content='IP Info' />
