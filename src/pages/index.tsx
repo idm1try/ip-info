@@ -1,12 +1,19 @@
-import Search from '../components/search'
 import useIpInfo from '../lib/useIpInfo'
 
 const Page = () => {
-  const { ipInfo, isLoading } = useIpInfo()
+  const { ipInfo, isLoading, ip, setIp } = useIpInfo()
 
   return (
     <div>
-      <Search />
+      <input
+        aria-label='Enter ip'
+        placeholder='Enter ip'
+        type='text'
+        spellCheck='false'
+        value={ip}
+        onChange={event => setIp(event.target.value)}
+        className='rounded-lg border border-neutral-400/30 bg-white py-2 px-4 text-neutral-700 shadow-sm transition-colors duration-300 placeholder:text-neutral-600 hover:text-neutral-900/50 hover:shadow-sm focus:text-neutral-900/50 focus:shadow-sm focus:outline-none dark:border-neutral-500/30 dark:bg-neutral-900 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:hover:border-neutral-500/50 dark:hover:text-white dark:focus:border-neutral-500/50 dark:focus:text-white'
+      />
       {ipInfo && !isLoading && (
         <div>
           <ul className='animated-list mt-7'>
