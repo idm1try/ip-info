@@ -1,6 +1,4 @@
-'use client'
-
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import useSWR from 'swr'
 import { IpInfoResponse } from './types'
 
@@ -13,9 +11,13 @@ async function fetcher(url: string) {
 }
 
 export default function useIpInfo(): IpInfoResponse {
-  const [ip, setIp] = useState<string>('')
   const { data: getIp } = useSWR('https://ipinfo.io/ip', ipFetcher)
-  const { data, error } = useSWR(`/api/ipinfo?ip=${ip ?? getIp}`, fetcher)
+  const [ip, setIp] = useState<string>('')
+
+  const { data, error } = useSWR(
+    `/api/ip?ip=${ip !== '' ? ip : getIp}`,
+    fetcher
+  )
 
   return {
     ip,
