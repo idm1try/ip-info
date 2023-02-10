@@ -9,9 +9,7 @@ export default async function handler(req: NextRequest) {
   const ip = searchParams.get('ip')
 
   const info = await fetch(
-    `https://ipinfo.io/${ip ?? req.headers.get('x-forwarded-for')}?token=${
-      process.env.IPINFO_TOKEN
-    }`
+    `https://ipinfo.io/${ip}?token=${process.env.IPINFO_TOKEN}`
   )
 
   const ipInfo = await info.json()
