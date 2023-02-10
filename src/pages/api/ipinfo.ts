@@ -1,27 +1,26 @@
-import { NextApiRequest, NextApiResponse } from 'next'
+import { NextRequest } from 'next/server'
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  if (!req.query.ip) {
-    return res.status(400).json({
-      message: 'Cannot fetch ip information without a ip query.',
-    })
-  }
+export const config = {
+  runtime: 'edge',
+}
 
-  try {
-    const baseUrl = `https://ipinfo.io/${req.query.ip}?token=${process.env.IPINFO_TOKEN}`
+export default async function handler(req: NextRequest) {
+  const { searchParams } = new URL(req.url)
+  const ip = searchParams.get('ip')
 
-    const info = await fetch(baseUrl)
-    const ipinfo = await info.json()
+  const info = await fetch(
+    `https://ipinfo.io/${ip ?? req.headers.get('x-forwarded-for')}?token=${
+      process.env.IPINFO_TOKEN
+    }`
+  )
 
-    if (Object.keys(ipinfo).length) {
-      return res.status(200).json(ipinfo)
-    } else {
-      return res.status(500).json({ message: 'Cannot fetch ip data.' })
-    }
-  } catch (error) {
-    return res.status(500).json({ message: error })
-  }
+  const ipInfo = await info.json()
+
+  return new Response(JSON.stringify(ipInfo), {
+    status: 200,
+    headers: {
+      'content-type': 'application/json',
+      'cache-control': 'public, s-maxage=1200, stale-while-revalidate=600',
+    },
+  })
 }
