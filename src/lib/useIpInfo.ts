@@ -14,10 +14,7 @@ export default function useIpInfo(): IpInfoResponse {
   const { data: getIp } = useSWR('https://ipinfo.io/ip', ipFetcher)
   const [ip, setIp] = useState<string>('')
 
-  const { data, error } = useSWR(
-    `/api/ip?ip=${ip !== '' ? ip : getIp}`,
-    fetcher
-  )
+  const { data, error } = useSWR(`/ip?ip=${ip !== '' ? ip : getIp}`, fetcher)
 
   return {
     ip,
