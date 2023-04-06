@@ -7,7 +7,7 @@ const fontSans = Inter({ variable: '--font-sans', subsets: ['latin'] })
 
 export const metadata = {
   title: 'IP Info',
-  themeColor: '#111010',
+  themeColor: '#1e1e2e',
   description: 'View your ip information',
   robots: {
     index: true,
