@@ -7,7 +7,7 @@ export async function GET(req: Request) {
   const ip = searchParams.get('ip')
 
   const info = await fetch(
-    `https://ipinfo.io/${ip}?token=${process.env.IPINFO_TOKEN}`
+    `https://ipinfo.io/${ip}?token=${process.env.IPINFO_TOKEN}`,
   )
 
   const ipInfo = await info.json()
