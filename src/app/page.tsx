@@ -16,11 +16,11 @@ const Page = () => {
         value={ip}
         onChange={event => setIp(event.target.value)}
         className={cn(
-          'rounded-lg border border-crust bg-mantle',
-          'py-2 px-4 capitalize text-subtext0 shadow-sm',
-          'outline-none transition-all duration-300',
-          'placeholder:text-overlay0 hover:text-subtext1',
-          'focus:ring-2 ring-surface1 ring-offset-2 ring-offset-base',
+          'rounded-lg border border-surface0 bg-base',
+          'py-2 px-4 capitalize shadow-sm',
+          'outline-none transition-colors duration-300',
+          'placeholder:text-overlay0 hover:border-surface1',
+          'focus:text-text focus:border-surface2',
         )}
       />
       {ipInfo && !isLoading && (
