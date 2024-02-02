@@ -27,7 +27,7 @@ const Page = () => {
         <div>
           <ul className='animated-list mt-7'>
             {ipInfo?.hostname && (
-              <li className='transition-all duration-300'>
+              <li>
                 <div className='flex flex-col gap-1 py-3 md:flex-row md:gap-9'>
                   <span className='text-overlay0 md:w-28'>Hostname</span>
                   <div>{ipInfo.hostname}</div>
@@ -35,7 +35,7 @@ const Page = () => {
               </li>
             )}
             {ipInfo?.org && (
-              <li className='transition-all duration-300'>
+              <li>
                 <div className='flex flex-col gap-1 py-3 md:flex-row md:gap-9'>
                   <span className='text-overlay0 md:w-28'>ISP</span>
                   <div>{ipInfo.org.slice(ipInfo.org.indexOf(' '))}</div>
@@ -43,7 +43,7 @@ const Page = () => {
               </li>
             )}
             {ipInfo?.timezone && (
-              <li className='transition-all duration-300'>
+              <li>
                 <div className='flex flex-col gap-1 py-3 md:flex-row md:gap-9'>
                   <span className='text-overlay0 md:w-28'>Timezone</span>
                   <div>{ipInfo.timezone}</div>
@@ -51,7 +51,7 @@ const Page = () => {
               </li>
             )}
             {ipInfo?.city && (
-              <li className='transition-all duration-300'>
+              <li>
                 <div className='flex flex-col gap-1 py-3 md:flex-row md:gap-9'>
                   <span className='text-overlay0 md:w-28'>City</span>
                   <div>{ipInfo.city}</div>
@@ -59,7 +59,7 @@ const Page = () => {
               </li>
             )}
             {ipInfo?.region && (
-              <li className='transition-all duration-300'>
+              <li>
                 <div className='flex flex-col gap-1 py-3 md:flex-row md:gap-9'>
                   <span className='text-overlay0 md:w-28'>Region</span>
                   <div>{ipInfo.region}</div>
@@ -67,7 +67,7 @@ const Page = () => {
               </li>
             )}
             {ipInfo?.country && (
-              <li className='transition-all duration-300'>
+              <li>
                 <div className='flex flex-col gap-1 py-3 md:flex-row md:gap-9'>
                   <span className='text-overlay0 md:w-28'>Country</span>
                   <div>{ipInfo.country}</div>
