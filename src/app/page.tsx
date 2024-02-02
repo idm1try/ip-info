@@ -16,7 +16,7 @@ const Page = () => {
         value={ip}
         onChange={event => setIp(event.target.value)}
         className={cn(
-          'rounded-lg border border-surface0 bg-base',
+          'rounded-md border border-surface0 bg-base',
           'py-2 px-4 capitalize shadow-sm',
           'outline-none transition-colors duration-300',
           'placeholder:text-overlay0 hover:border-surface1',

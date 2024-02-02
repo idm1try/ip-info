@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils'
 import { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 
-const cartographCF = localFont({
+const cartographcf = localFont({
   variable: '--font-cartographcf',
   src: [
     {
@@ -18,32 +18,32 @@ const cartographCF = localFont({
     },
     {
       path: '../../public/fonts/CartographCF-Bold.woff2',
-      weight: '600',
+      weight: '700',
       style: 'normal',
     },
     {
       path: '../../public/fonts/CartographCF-BoldItalic.woff2',
-      weight: '600',
+      weight: '700',
       style: 'italic',
     },
     {
       path: '../../public/fonts/CartographCF-ExtraBold.woff2',
-      weight: '700',
+      weight: '800',
       style: 'normal',
     },
     {
       path: '../../public/fonts/CartographCF-ExtraBoldItalic.woff2',
-      weight: '700',
+      weight: '800',
       style: 'italic',
     },
     {
       path: '../../public/fonts/CartographCF-Heavy.woff2',
-      weight: '800',
+      weight: '900',
       style: 'normal',
     },
     {
       path: '../../public/fonts/CartographCF-HeavyItalic.woff2',
-      weight: '800',
+      weight: '900',
       style: 'italic',
     },
   ],
@@ -57,7 +57,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://idm1tryip.vercel.app'),
+  metadataBase: new URL('https://ip.idm1try.dev'),
   title: 'IP Info',
   description: 'View your ip information',
   robots: {
@@ -73,11 +73,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     title: 'IP Info',
-    site: '@idm1try',
-    creator: '@idm1try',
     card: 'summary_large_image',
     description: 'View your ip information',
-    images: 'https://idm1try.ru/api/og?heading=IP%20Info&desc=View%20your%20ip%20information',
+    images: 'https://idm1try.dev/api/og?heading=IP%20Info&desc=View%20your%20ip%20information',
   },
   openGraph: {
     title: {
@@ -88,15 +86,15 @@ export const metadata: Metadata = {
     siteName: 'Weather',
     locale: 'en-US',
     type: 'website',
-    url: 'https://idm1tryip.vercel.app/',
-    images: 'https://idm1try.ru/api/og?heading=IP%20Info&desc=View%20your%20ip%20information',
+    url: 'https://ip.idm1try.dev/',
+    images: 'https://idm1try.dev/api/og?heading=IP%20Info&desc=View%20your%20ip%20information',
   },
   icons: {
     icon: '/favicon.png',
     apple: 'apple-touch-icon.png',
   },
   alternates: {
-    canonical: 'https://idm1tryip.vercel.app/',
+    canonical: 'https://ip.idm1try.dev/',
   },
   manifest: '/site.webmanifest',
   other: {
@@ -114,8 +112,8 @@ export default function RootLayout({
       lang='en'
       className={cn(
         'scroll-smooth font-sans text-text bg-base',
-        'antialiased selection:bg-surface1',
-        cartographCF.variable,
+        'antialiased selection:bg-surface1 leading-relaxed',
+        cartographcf.variable,
       )}
     >
       <body>
